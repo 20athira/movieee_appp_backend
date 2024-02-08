@@ -1,0 +1,13 @@
+const mongoose=require("mongoose")
+
+//creating structure
+const movieschema=new mongoose.Schema(
+        {
+            Moviename:String,
+            moviedescription:String,
+            moviedirector:String,
+            movieactor:String,
+        
+        }
+)
+module.exports=mongoose.model("movie",movieschema)
