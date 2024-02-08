@@ -1,0 +1,16 @@
+const express=require("express")
+const moviemodel=require("../model/moviemodel")
+const router=express.Router()
+
+
+router.post("/add",async(req,res)=>{
+    let data=req.body                //read data
+    let movie=new moviemodel(data)
+    let result=await movie.save()
+    res.json({
+        status:"sucess"
+    })
+    //res.send("ad")
+})
+
+module.exports=router
