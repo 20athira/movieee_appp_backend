@@ -17,4 +17,9 @@ router.get("/viewall",async(req,res)=>{  //display
     res.json(data)
     //res.send("vi")
 })
+router.post("/search",async(req,res)=>{
+    let input=req.body
+    let data=await moviemodel.find(input)
+    res.json(data)
+    })
 module.exports=router
